@@ -1,0 +1,552 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container{
+background-color: #8CC461;
+width: 100%;
+height: 95.5vh; 
+padding-top:2rem ; 
+overflow-y: hidden;
+
+}
+
+.box .left p{
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    height: auto;
+    margin-inline: auto;
+    
+}
+.right{
+    display: flex;
+    justify-content: space-between;
+}
+.box .right .computerScore{
+    margin-right: 1rem;
+    padding: 0.5rem;
+    width: 8rem;
+    border-radius: 10px;
+    height: auto;
+    margin-block:0.5rem;
+    background: #fff;
+    font-weight: bolder;
+
+}
+.right .userScore{
+    border-radius: 10px;
+    height: auto;
+    width: 8rem;
+    margin-block:0.5rem;
+    padding: 0.5rem;
+    background: #fff;
+}
+.right .computerScore p{
+    color: #656565;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+     text-align: center;
+}
+.right .computerScore h1{
+    text-align: center;
+    font-size: 3.8rem;
+}
+.right .userScore p{
+    background-color: #ffffff;
+    color: #656565;
+    margin-inline: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bolder;
+}
+.right .userScore h1{
+    text-align: center;
+    font-size: 3.8rem;
+}
+
+
+
+.rules{
+    position: absolute;
+    left:77%;
+    bottom: 12%;
+    display: none;
+    flex-direction: column;
+    background-color: #004429;
+    border: 8px solid  #ffffff;
+    width:15rem;
+    border-radius: 10px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+/* .rules .image{
+    background-color: red;
+    width: 5rem;
+} */
+.rules img{
+    position: absolute;
+    background-color: red;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    right: -2rem;
+    top: -2rem;
+    cursor: pointer;
+}
+.rules ul li{
+    color: #ffffff;
+    padding-block: 7px;
+    padding-inline: 12px;
+     font-size: 0.8rem;
+    
+}
+.rules ul li::before{
+    color:yellow;
+    content: "■";
+    position: absolute;
+    left: 6px;
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+}
+.triangle {
+    position: absolute;
+    width: 30%;
+    left: 38%;
+    top:48%;
+}
+.triangle .first{
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.64);
+    height: 1.3rem;
+}
+.triangle .second{
+    position: absolute;
+    left: -3rem;
+    top:8rem;
+    width: 65%;
+    background-color: rgba(0, 0, 0, 0.64);
+    height: 1.3rem;
+    rotate: 60deg;
+    
+}
+.triangle .third{
+    position: absolute;
+    right: 2rem;
+    top:8rem;
+    width: 65%;
+    background-color: rgba(0, 0, 0, 0.64);
+    height: 1.3rem;
+    rotate: -60deg;
+}
+.triangle .stone{
+    position: absolute;
+    top: -3rem;
+    left: -1rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1rem solid #0074B6;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    width: 7rem;
+    cursor: pointer;
+}
+.result{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 60%;
+    height: 20rem;
+    left: 20%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+}
+.result .middleResult p{
+    color: #fff;
+
+}
+
+.result .stone{
+    position: absolute;
+    top: -3rem;
+    left: -3rem;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1rem solid #0074B6;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7rem;
+    width: 7rem;
+}
+/* .gradient{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    border-radius: 50%;
+    width: 22rem;
+    height: 21rem;
+} */
+.gradientActive{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     border-radius: 50%;
+     width: 22rem;
+     height: 21rem;
+    background: radial-gradient(circle, rgba(137,193,94,1) 0%, rgba(39,154,39,1) 46%, rgba(246,246,246,1) 46%, rgba(50,166,47,1) 46%, rgba(39,154,39,1) 60%, rgba(102,178,72,1) 56%, rgba(102,178,72,1) 65%, rgba(137,193,100,1) 100%);
+}
+/* .gradient p{
+    position: absolute;
+    top: 1rem;
+    font-size: larger;
+    color: #fff;
+    font-weight: bolder;
+} */
+ .gradientUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .gradientPC{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+.gradientUser p{
+    position: absolute;
+    top: 1.5rem;
+    font-size: larger;
+    color: #fff;
+    font-weight: bolder;
+}
+.gradientPC p{
+    position: absolute;
+    top: 1.5rem;
+    font-size: larger;
+    color: #fff;
+    font-weight: bolder;
+}
+.gradientActive p{
+    position: absolute;
+    top: 1.5rem;
+    font-size: larger;
+    color: #fff;
+    font-weight: bolder;
+}
+.userResult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    /* border: 15px solid blue; */
+    border-radius: 50%;
+    /* border: 1rem solid #BD00FF; */
+    align-content: center;
+   
+    height: 8.5rem;
+    width: 8.5rem;
+}
+.computerResult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    /* border: 1rem solid #BD00FF; */
+    align-content: center;
+   
+    height: 8.5rem;
+    width: 8.5rem;
+}
+.triangle .paper{
+    position: absolute;
+    top: 11rem;
+    left: 7.5rem;
+    display: flex;
+    justify-content: center;align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1rem solid  #FFA943;
+    align-content: center;
+    cursor: pointer;
+    height: 7rem;
+    width: 7rem;
+}
+
+
+.triangle .scissor{
+    position: absolute;
+    top: -3rem;
+    left: 16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1rem solid #BD00FF;
+    align-content: center;
+    cursor: pointer;
+    height: 7rem;
+    width: 7rem;
+}
+
+.rules ul { 
+  list-style-type:  none;
+}
+
+.rules h1{
+    color: #ffffff;
+    text-align: center;
+    padding-block: 0.5rem;
+    margin-right: 1rem;    
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    /* left:78%; */
+    right: 2%;
+    /* top:90%; */
+    bottom:3%;
+}
+.btn button{
+    margin-left: 2rem;
+    padding: 0.3rem 2rem 0.3rem 2rem ;
+    font-size: 1.3rem;
+    cursor: pointer;
+      color: #ffffff;
+      background-color: transparent;
+      border:3px solid #ffffff;
+      font-weight: bolder;
+      border-radius: 10px;
+}
+a{
+    text-decoration: none;
+}
+#next{
+    display: none;
+    cursor: pointer;
+}
+
+/* .btn img{
+    width: 2rem;
+} */
+
+.middleResult{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.middleResult p{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    
+}
+.middleResult button{
+    width: auto;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6B6B6B;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.middleResult .outcome {
+font-size: 2.5rem;
+}
+
+.animationImg{
+    transform-origin: bottom;
+    animation: shake 0.7s ease infinite;
+}
+
+@keyframes shake {
+    50%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(15deg);
+    }
+}
+
+.hurrayContainer{
+    height: 100vh;
+    display: none;
+}
+.cup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.cup h1{
+color: #ffffff;
+font-size: 6rem;
+margin-top: 1rem;
+/* margin-left:-5rem ; */
+
+}
+.cup h3{
+    color: #ffffff;
+    font-size: 2.5rem;
+    /* margin-left:-5rem ; */
+    
+}
+.cup .cupImage{
+    width: 50%;
+}
+.back button{
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin-top: 3rem;
+    border-radius: 7px;
+    border: 1px solid white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    font-weight: 500;
+    position: absolute;
+    bottom: -5rem;
+    left: 36%;
+    cursor: pointer;
+}
+
+
+.stars {
+    border-radius: 50%;
+    animation-iteration-count: infinite;
+  }
+
+  .star-1 {
+    position: absolute;
+    top: 48%;
+    left: 38% ;
+    /* margin-top: 23%; */
+    width: 2rem; 
+    /* margin-left: 40%; */
+    animation-name: twinkle-1;
+    animation-duration: 1.1s;
+  }
+
+  .star-2 {
+    position: absolute;
+    /* margin-top: 10rem; */
+    top:27%;
+    left: 34%;
+    width: 8rem;
+    /* margin-left: 35%; */
+    animation-name: twinkle-2;
+    animation-duration: 1s;
+  }
+  .star-3 {
+    position: absolute;
+    /* margin-top: 17rem;
+    margin-left: 38%; */
+    top:12%;
+    left: 38%;
+    width: 5rem;
+      animation-name: twinkle-2;
+      animation-duration: 1.2s;
+    }
+    .star-4 {
+        position: absolute;
+      /* margin-top: 13rem;
+       margin-left: 36%; */
+       top:20%;
+    left: 35%;
+      width: 1rem;
+        animation-name: twinkle-2;
+        animation-duration: 1.2s;
+      }
+      .star-5 {
+        position: absolute;
+    /* margin-top: 20rem;
+    margin-left: 47%; */
+    top:10%;
+    left: 48%;
+    width: 3rem;
+        animation-name: twinkle-1;
+        animation-duration: 1.2s;
+      }
+      .star-6 {
+        position: absolute;
+      /* margin-top: 17rem;
+       margin-left: 57%; */
+       top:10%;
+    left: 57%;
+      width: 5rem;
+        animation-name: twinkle-2;
+        animation-duration: 1.2s;
+      }
+      .star-7 {
+        position: absolute;
+      /* margin-top: 10rem;
+       margin-left: 58%; */
+       top:28%;
+    left: 58%;
+      width: 7rem;
+        animation-name: twinkle-1;
+        animation-duration: 1.2s;
+      }
+      .star-8 {
+        position: absolute;
+      /* margin-top: 2rem; */
+       /* margin-left: 57%; */
+       top:48%;
+    left: 58%;
+      width: 2rem;
+        animation-name: twinkle-2;
+        animation-duration: 1.2s;
+      }
+
+      #playAgain{
+        position: absolute;
+        bottom: 2%;
+        text-decoration: none;
+        cursor: pointer;
+      }
+   
+  @keyframes twinkle-1 {
+    50% {
+      transform: scale(0.3);
+      opacity: 1;
+    }
+  }
+
+  @keyframes twinkle-2 {
+    20% {
+      transform: scale(0.5);
+      opacity: 1;
+    }
+  }
