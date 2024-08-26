@@ -167,6 +167,7 @@ optionImages.forEach((img,index)=>{
 playAgainButton.addEventListener("click",()=>{
     console.log("cicked")
     resultDOM.style.display="none";
+    nextButton.style.display="none";
     triangleDOM.style.display="block";
     gradientPC.className="gradient";
     gradientUser.className="gradient";
@@ -183,7 +184,6 @@ cross.addEventListener("click",()=>{
 
 nextButton.addEventListener("click",()=>{
     gamePage.style.display="none";
-    // stars.style.display="content";
     hurrayContainer.style.display="flex";
     nextButton.style.display="none";
 })
